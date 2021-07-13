@@ -1,3 +1,4 @@
+#include <QtMath>
 #include "Calculator.h"
 
 Calculator::Calculator() : isTimed(true),
@@ -11,3 +12,44 @@ Calculator::Calculator() : isTimed(true),
 }
 
 
+int Calculator::getNumLaps()
+{
+    if(!isTimed) return raceLaps;
+
+    return qCeil(raceTime * 60 / lapTime);
+}
+
+
+float Calculator::getRaceTime()
+{
+    if(isTimed) return raceTime;
+
+    return (raceLaps * lapTime) / 60;
+}
+
+
+float Calculator::getLapsPerTank()
+{
+    return maxFuel / usage;
+}
+
+
+float Calculator::getTotalFuel()
+{
+    return usage * getNumLaps();
+}
+
+int Calculator::getNumStops()
+{
+    return qCeil((getTotalFuel() - maxFuel) / maxFuel);
+}
+
+float Calculator::getFuelOnStop()
+{
+    if(getNumStops()) {
+        float calc = getTotalFuel() - (getNumStops()) * (getLapsPerTank()*usage);
+        return calc;
+    } else {
+        return getTotalFuel();
+    }
+}

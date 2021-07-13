@@ -1,5 +1,8 @@
+#include <QRegularExpression>
+
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -16,24 +19,39 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_raceTimeInput_valueChanged(int arg1)
 {
+    c.raceTime = c.raceLaps = arg1;
 
+    updateOutputs();
 }
 
 void MainWindow::on_lapTimeInput_textChanged(const QString &arg1)
 {
+    // parse number of seconds from string format
+    QRegularExpression re("^(?<min>(\\d\\d|\\d)):(?<sec>\\d\\d.(\\d|\\d\\d|\\d\\d\\d))$");
 
+    QRegularExpressionMatch match = re.match(arg1);
+
+    if(match.hasMatch()) {
+        c.lapTime = match.captured("sec").toFloat() + match.captured("min").toInt() * 60;
+    }
+
+    updateOutputs();
 }
 
 
 void MainWindow::on_maxFuelInput_valueChanged(double arg1)
 {
+    c.maxFuel = arg1;
 
+    updateOutputs();
 }
 
 
 void MainWindow::on_fuelUsageInput_valueChanged(double arg1)
 {
+    c.usage = arg1;
 
+    updateOutputs();
 }
 
 /**
@@ -52,6 +70,8 @@ void MainWindow::on_timedRaceCheck_stateChanged(int arg1)
         ui->lapsResultLabel->setText("Number of Laps");
         c.isTimed = true;
     }
+
+    updateOutputs();
 }
 
 
@@ -61,5 +81,18 @@ void MainWindow::on_timedRaceCheck_stateChanged(int arg1)
  */
 void MainWindow::updateOutputs()
 {
+    // check for valid values first
+    if(!c.raceTime || !c.raceLaps
+        || c.maxFuel == 0 || c.usage == 0 || c.lapTime == 0) return;
 
+    if(c.isTimed) {
+        ui->lapsResultOutput->display(c.getNumLaps());
+    } else {
+        ui->lapsResultOutput->display(c.getRaceTime());
+    }
+
+    ui->lapsPerTankOutput->display(c.getLapsPerTank());
+    ui->totalFuelOutput->display(c.getTotalFuel());
+    ui->numStopsOutput->display(c.getNumStops());
+    ui->fuelOnStopOutput->display(c.getFuelOnStop());
 }

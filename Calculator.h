@@ -11,6 +11,13 @@ public:
 
     Calculator();
 
+    int getNumLaps();
+    float getRaceTime();
+    float getLapsPerTank();
+    float getTotalFuel();
+    int getNumStops();
+    float getFuelOnStop();
+
 };
 
 #endif // CALCULATOR_H
