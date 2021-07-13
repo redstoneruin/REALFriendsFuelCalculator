@@ -13,3 +13,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_raceTimeInput_valueChanged(int arg1)
+{
+
+}
+
