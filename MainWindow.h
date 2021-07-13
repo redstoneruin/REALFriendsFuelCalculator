@@ -20,9 +20,19 @@ public:
 private slots:
     void on_raceTimeInput_valueChanged(int arg1);
 
+    void on_timedRaceCheck_stateChanged(int arg1);
+
+    void on_lapTimeInput_textChanged(const QString &arg1);
+
+    void on_maxFuelInput_valueChanged(double arg1);
+
+    void on_fuelUsageInput_valueChanged(double arg1);
+
 private:
     Ui::MainWindow *ui;
 
     Calculator c;
+
+    void updateOutputs();
 };
 #endif // MAINWINDOW_H
