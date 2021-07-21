@@ -74,6 +74,36 @@ void MainWindow::on_timedRaceCheck_stateChanged(int arg1)
     updateOutputs();
 }
 
+/**
+ * @brief MainWindow::on_paceLapCheck_stateChanged
+ * @param arg1
+ */
+void MainWindow::on_paceLapCheck_stateChanged(int arg1)
+{
+    if(!arg1) {
+        c.hasPaceLap = false;
+    } else {
+        c.hasPaceLap = true;
+    }
+
+    updateOutputs();
+}
+
+
+
+/**
+ * @brief MainWindow::on_extraLapSlider_valueChanged
+ * @param value
+ */
+void MainWindow::on_extraLapSlider_valueChanged(int value)
+{
+    // set extra laps
+    c.extraLaps = value;
+    // change displayed value
+    ui->extraLapLabel->setText("+" + QString::number(value) + " Laps");
+
+    updateOutputs();
+}
 
 
 /**

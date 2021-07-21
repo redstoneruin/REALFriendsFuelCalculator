@@ -5,8 +5,8 @@
 class Calculator
 {
 public:
-    bool isTimed;
-    int raceTime, raceLaps;
+    bool isTimed, hasPaceLap;
+    int raceTime, raceLaps, extraLaps;
     float maxFuel, usage, lapTime;
 
     Calculator();

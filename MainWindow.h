@@ -28,6 +28,10 @@ private slots:
 
     void on_fuelUsageInput_valueChanged(double arg1);
 
+    void on_extraLapSlider_valueChanged(int value);
+
+    void on_paceLapCheck_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
 
