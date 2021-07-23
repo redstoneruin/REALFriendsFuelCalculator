@@ -33,6 +33,9 @@ void MainWindow::on_lapTimeInput_textChanged(const QString &arg1)
 
     if(match.hasMatch()) {
         c.lapTime = match.captured("sec").toFloat() + match.captured("min").toInt() * 60;
+        ui->lapFormatLabel->setText("");
+    } else {
+        ui->lapFormatLabel->setText("Invalid Lap Time Format");
     }
 
     updateOutputs();
