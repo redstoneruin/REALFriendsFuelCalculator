@@ -116,13 +116,13 @@ void MainWindow::updateOutputs()
         || c.maxFuel == 0 || c.usage == 0 || c.lapTime == 0) return;
 
     if(c.isTimed) {
-        ui->lapsResultOutput->display(c.getNumLaps());
+        ui->lapsResultOutput->setText(QString::number(c.getNumLaps()));
     } else {
-        ui->lapsResultOutput->display(c.getRaceTime());
+        ui->lapsResultOutput->setText(QString::number(c.getRaceTime()));
     }
 
-    ui->lapsPerTankOutput->display(c.getLapsPerTank());
-    ui->totalFuelOutput->display(c.getTotalFuel());
-    ui->numStopsOutput->display(c.getNumStops());
-    ui->fuelOnStopOutput->display(c.getFuelOnStop());
+    ui->lapsPerTankOutput->setText(QString::number(c.getLapsPerTank()));
+    ui->totalFuelOutput->setText(QString::number(c.getTotalFuel()));
+    ui->numStopsOutput->setText(QString::number(c.getNumStops()));
+    ui->fuelOnStopOutput->setText(QString::number(c.getFuelOnStop()));
 }

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>628</width>
-    <height>436</height>
+    <height>434</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -119,12 +119,26 @@
      <item>
       <widget class="QLabel" name="lapsResultLabel">
        <property name="text">
-        <string>Number of Laps</string>
+        <string>Number of Laps:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLCDNumber" name="lapsResultOutput"/>
+      <widget class="QLabel" name="lapsResultOutput">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -141,12 +155,26 @@
      <item>
       <widget class="QLabel" name="lapsPerTankLabel">
        <property name="text">
-        <string>Laps per Tank</string>
+        <string>Laps Per Tank:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLCDNumber" name="lapsPerTankOutput"/>
+      <widget class="QLabel" name="lapsPerTankOutput">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -163,12 +191,26 @@
      <item>
       <widget class="QLabel" name="totalFuelLabel">
        <property name="text">
-        <string>Total Fuel Required</string>
+        <string>Total Fuel Required:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLCDNumber" name="totalFuelOutput"/>
+      <widget class="QLabel" name="totalFuelOutput">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -185,12 +227,26 @@
      <item>
       <widget class="QLabel" name="numStopsLabel">
        <property name="text">
-        <string>Number of Stops</string>
+        <string>Number of Stops:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLCDNumber" name="numStopsOutput"/>
+      <widget class="QLabel" name="numStopsOutput">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -207,12 +263,26 @@
      <item>
       <widget class="QLabel" name="fuelOnStopLabel">
        <property name="text">
-        <string>Fuel on Last Stop</string>
+        <string>Fuel on Last Stop:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLCDNumber" name="fuelOnStopOutput"/>
+      <widget class="QLabel" name="fuelOnStopOutput">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
