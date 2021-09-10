@@ -5,10 +5,10 @@ Calculator::Calculator() : isTimed(true),
     hasPaceLap(false),
     raceTime(0),
     raceLaps(0),
+    extraLaps(0),
     maxFuel(0),
     usage(0),
-    lapTime(0),
-    extraLaps(0)
+    lapTime(0)
 {
 
 }
