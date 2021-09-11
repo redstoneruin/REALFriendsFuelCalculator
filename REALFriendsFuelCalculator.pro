@@ -9,16 +9,24 @@ CONFIG += c++11 static
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    Calculator.cpp \
-    main.cpp \
-    MainWindow.cpp
+        Calculator.cpp \
+        main.cpp \
+        MainWindow.cpp \
+        irsdk/irsdk_client.cpp \
+        irsdk/irsdk_diskclient.cpp \
+        irsdk/irsdk_utils.cpp \
+        irsdk/yaml_parser.cpp
 
 HEADERS += \
-    Calculator.h \
-    MainWindow.h
+        Calculator.h \
+        MainWindow.h \
+        irsdk/irsdk_client.h \
+        irsdk/irsdk_diskclient.h \
+        irsdk/yaml_parser.h \
+        irsdk/irsdk_defines.h
 
 FORMS += \
-    MainWindow.ui
+        MainWindow.ui
 
 RC_ICONS = icon.ico
 
