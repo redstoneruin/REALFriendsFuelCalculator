@@ -83,10 +83,14 @@ void MainWindow::on_timedRaceCheck_stateChanged(int arg1)
  */
 void MainWindow::on_paceLapCheck_stateChanged(int arg1)
 {
+    c.paceLapModifier = arg1;
+
     if(!arg1) {
-        c.hasPaceLap = false;
+        ui->paceLapCheck->setText("No pace lap");
+    } else if(arg1 == 1) {
+        ui->paceLapCheck->setText("Reduced pace lap");
     } else {
-        c.hasPaceLap = true;
+        ui->paceLapCheck->setText("Full pace lap");
     }
 
     updateOutputs();

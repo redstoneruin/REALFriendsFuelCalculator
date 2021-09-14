@@ -398,10 +398,10 @@
    <widget class="QCheckBox" name="timedRaceCheck">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>360</y>
+      <x>30</x>
+      <y>370</y>
       <width>91</width>
-      <height>31</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -417,20 +417,23 @@
    <widget class="QCheckBox" name="paceLapCheck">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>360</y>
-      <width>101</width>
-      <height>31</height>
+      <x>30</x>
+      <y>340</y>
+      <width>131</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Pace Lap</string>
+     <string>No Pace Lap</string>
+    </property>
+    <property name="tristate">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QSlider" name="extraLapSlider">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>200</x>
       <y>350</y>
       <width>121</width>
       <height>16</height>
@@ -452,7 +455,7 @@
    <widget class="QLabel" name="extraLapLabel">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>220</x>
       <y>370</y>
       <width>81</width>
       <height>21</height>
