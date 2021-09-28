@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>628</width>
-    <height>434</height>
+    <width>1110</width>
+    <height>445</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -468,13 +468,23 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QTextBrowser" name="telemTextArea">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>10</y>
+      <width>441</width>
+      <height>371</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>628</width>
+     <width>1110</width>
      <height>20</height>
     </rect>
    </property>

@@ -3,17 +3,40 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
+#include "TelemManager.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // set up telemetry manager thread
+    TelemManager *tm = new TelemManager;
+    tm->moveToThread(&telemThread);
+    connect(&telemThread, &QThread::finished, tm, &QObject::deleteLater);
+    connect(this, &MainWindow::startTelemThread, tm, &TelemManager::startTelemetry);
+    connect(tm, &TelemManager::printMessage, this, &MainWindow::handleTelemMessage);
+    telemThread.start();
+
+    // start the thread
+    emit startTelemThread();
 }
 
 MainWindow::~MainWindow()
 {
+    telemThread.quit();
+    telemThread.wait();
+
     delete ui;
+}
+
+
+void MainWindow::handleTelemMessage(const QString& str)
+{
+    ui->telemTextArea->append(str);
+    ui->telemTextArea->append("\n");
 }
 
 

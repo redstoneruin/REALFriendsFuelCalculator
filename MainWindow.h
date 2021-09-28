@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QThread>
 
 #include "Calculator.h"
 
@@ -12,12 +13,14 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
+    QThread telemThread;
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
+    void handleTelemMessage(const QString& str);
+
     void on_raceTimeInput_valueChanged(int arg1);
 
     void on_timedRaceCheck_stateChanged(int arg1);
@@ -31,6 +34,9 @@ private slots:
     void on_extraLapSlider_valueChanged(int value);
 
     void on_paceLapCheck_stateChanged(int arg1);
+
+signals:
+    void startTelemThread();
 
 private:
     Ui::MainWindow *ui;

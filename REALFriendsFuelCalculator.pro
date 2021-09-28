@@ -10,6 +10,7 @@ CONFIG += c++11 static
 
 SOURCES += \
         Calculator.cpp \
+        TelemManager.cpp \
         main.cpp \
         MainWindow.cpp \
         irsdk/irsdk_client.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 HEADERS += \
         Calculator.h \
         MainWindow.h \
+        TelemManager.h \
         irsdk/irsdk_client.h \
         irsdk/irsdk_diskclient.h \
         irsdk/yaml_parser.h \
