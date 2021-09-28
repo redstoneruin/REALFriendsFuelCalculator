@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     telemThread.quit();
-    telemThread.wait();
+    telemThread.terminate();
 
     delete ui;
 }

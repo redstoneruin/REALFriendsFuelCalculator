@@ -1,6 +1,8 @@
 #include "TelemManager.h"
 
-TelemManager::TelemManager(QObject *parent) : QObject(parent)
+TelemManager::TelemManager(QObject *parent) : QObject(parent),
+    endTelemLoop(false),
+    client(irsdkClient::instance())
 {
 
 }
@@ -13,4 +15,13 @@ TelemManager::TelemManager(QObject *parent) : QObject(parent)
 void TelemManager::startTelemetry() {
 
     emit printMessage("Starting telemetry...");
+
+    // enter telemetry loop
+    while(!endTelemLoop) {
+        if(!client.isConnected()) {
+            emit printMessage("Not connected");
+            break;
+        }
+    }
+
 }

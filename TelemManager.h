@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include "irsdk/irsdk_client.h"
+
 class TelemManager : public QObject
 {
     Q_OBJECT
@@ -15,6 +17,10 @@ public slots:
 signals:
     void printMessage(const QString& message);
 
+private:
+    bool endTelemLoop;
+
+    irsdkClient& client;
 };
 
 #endif // TELEMMANAGER_H
