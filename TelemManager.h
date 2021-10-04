@@ -13,6 +13,7 @@ public:
 
 public slots:
     void startTelemetry();
+    void stopTelemetry();
 
 signals:
     void printMessage(const QString& message);

@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     tm->moveToThread(&telemThread);
     connect(&telemThread, &QThread::finished, tm, &QObject::deleteLater);
     connect(this, &MainWindow::startTelemThread, tm, &TelemManager::startTelemetry);
+    connect(this, &MainWindow::stopTelemThread, tm, &TelemManager::stopTelemetry);
     connect(tm, &TelemManager::printMessage, this, &MainWindow::handleTelemMessage);
     telemThread.start();
 
@@ -26,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    emit stopTelemThread();
+
     telemThread.quit();
     telemThread.terminate();
 

@@ -37,6 +37,7 @@ private slots:
 
 signals:
     void startTelemThread();
+    void stopTelemThread();
 
 private:
     Ui::MainWindow *ui;
